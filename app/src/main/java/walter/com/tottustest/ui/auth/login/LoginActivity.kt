@@ -21,9 +21,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        txtEmail.setText("walter@gmail.com")
-        txtPassword.setText("walter")
-
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
 
         btnSignup.setOnClickListener {

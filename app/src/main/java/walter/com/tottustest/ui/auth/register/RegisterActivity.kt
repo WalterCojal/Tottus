@@ -28,11 +28,6 @@ class RegisterActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
 
-        txtEmail.setText("walter@gmail.com")
-        txtName.setText("walter")
-        txtLastname.setText("cojal")
-        txtPassword.setText("walter")
-
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
