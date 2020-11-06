@@ -40,14 +40,14 @@ class AuthViewModel(application: Application): BaseViewModel(application) {
                 }
                 .collect {
                     it?.let {
-                        if (it.password == password.toMD5()) {
+                        if (it.password == password) {
                             val bundle = Bundle().apply {
                                 putParcelable("user", it)
                             }
                             onIntentLiveData().postValue(Event(ActivityEvent(HomeActivity::class.java, bundle)))
                         } else {
                             onProgressLiveData().postValue(false)
-                            onMessageLiveData().postValue("No se encuentra registrado")
+                            onMessageLiveData().postValue("Credenciales incorrectas")
                         }
                     } ?: kotlin.run {
                         onProgressLiveData().postValue(false)
@@ -58,7 +58,6 @@ class AuthViewModel(application: Application): BaseViewModel(application) {
     }
 
     fun register(user: User) {
-        user.password = user.password.toMD5()
         viewModelScope.launch(Dispatchers.IO) {
             interactor.register(user)
                 .onStart { onProgressLiveData().postValue(true) }

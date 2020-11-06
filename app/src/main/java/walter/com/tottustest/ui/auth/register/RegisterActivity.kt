@@ -5,12 +5,18 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_register.btnSignup
+import kotlinx.android.synthetic.main.activity_register.toolbar
+import kotlinx.android.synthetic.main.activity_register.txtEmail
+import kotlinx.android.synthetic.main.activity_register.txtPassword
 import walter.com.tottustest.R
 import walter.com.tottustest.model.entity.User
 import walter.com.tottustest.ui.auth.AuthViewModel
 import walter.com.tottustest.util.isEmailValid
 import walter.com.tottustest.util.liveData.EventObserver
+import walter.com.tottustest.util.toMD5
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -21,6 +27,11 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
+
+        txtEmail.setText("walter@gmail.com")
+        txtName.setText("walter")
+        txtLastname.setText("cojal")
+        txtPassword.setText("walter")
 
         toolbar.setNavigationOnClickListener {
             onBackPressed()
