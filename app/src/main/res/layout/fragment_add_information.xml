@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="Ingrese sus datos"
+        style="@style/BoldText"
+        android:textSize="20sp"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <EditText
+        style="@style/RegularText"
+        android:id="@+id/txtField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_margin="6dp"
+         />
+
+    <EditText
+        style="@style/RegularText"
+        android:id="@+id/txtField2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+         />
+
+    <Button
+        android:background="@drawable/bg_primary"
+        android:id="@+id/btnAgree"
+        style="@style/RegularButtonText"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:text="Aceptar" />
+</LinearLayout>
